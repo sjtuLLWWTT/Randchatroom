@@ -18,8 +18,8 @@
 * 开发过程中遇到了很多奇怪的bug，修bug的同时也更加熟悉了websocket、npm各种指令的原理，一开始用socket.io库，后来学习了使用原生websocket的代码，于是借用了他的设计，50行左右实现了服务端的基本操作，但是没有成功迁移他的心跳时钟（自动断线）设计。  
 * 总之在开发的过程中，我从零开始探索vue框架，巩固了之前学到的前端知识，也锻炼了自己的编程能力（极大锻炼了debug能力），对于不熟悉的计网知识有了一些了解。虽然在debug和css布局上“浪费”了很多时间，但我感觉这次大作业还是让我收获很多的。  
 # 页面展示：登录页面
-![](https://github.com/sjtuLLWWTT/Chatroom-vue/blob/main/preview/preview%C2%B7.png)
+![](https://github.com/sjtuLLWWTT/Chatroom-vue/blob/main/preview/pcfront.png)
 # 移动端
-![](https://github.com/sjtuLLWWTT/Chatroom-vue/blob/main/preview/preview%C2%B7.png)
+![](https://github.com/sjtuLLWWTT/Chatroom-vue/blob/main/preview/pcfront2.png)
 # PC端
-![](https://github.com/sjtuLLWWTT/Chatroom-vue/blob/main/preview/preview%C2%B7.png)
+![](https://github.com/sjtuLLWWTT/Chatroom-vue/blob/main/preview/pcfront3.png)
