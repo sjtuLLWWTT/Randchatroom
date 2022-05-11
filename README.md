@@ -19,7 +19,7 @@
 * 总之在开发的过程中，我从零开始探索vue框架，巩固了之前学到的前端知识，也锻炼了自己的编程能力（极大锻炼了debug能力），对于不熟悉的计网知识有了一些了解。虽然在debug和css布局上“浪费”了很多时间，但我感觉这次大作业还是让我收获很多的。  
 # 页面展示：登录页面
 ![](https://github.com/sjtuLLWWTT/Chatroom-vue/blob/main/preview/pcfront.png)
-# 移动端
-![](https://github.com/sjtuLLWWTT/Chatroom-vue/blob/main/preview/pcfront2.png)
 # PC端
+![](https://github.com/sjtuLLWWTT/Chatroom-vue/blob/main/preview/pcfront2.png)
+# 移动端
 ![](https://github.com/sjtuLLWWTT/Chatroom-vue/blob/main/preview/pcfront3.png)
