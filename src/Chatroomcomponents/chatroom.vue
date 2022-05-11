@@ -58,7 +58,7 @@
       </div>
       
       <div class="msgFooter">
-        <input class="msgInput" type="text" v-model="inputMsg" placeholder="请输入发言内容" @keydown="sendInputKeydown" />
+        <input class="msgInput" type="text" v-model="inputMsg" placeholder="输入内容" @keydown="sendInputKeydown" />
         <div class="btn" @click="sendMsg">SEND</div>
       </div>
     </div>
@@ -167,7 +167,7 @@ export default {
       }
 
       this.ws.onclose = () => {
-        Toast('您已离开房间')
+        Toast(”离开')
         this.roomOpen = false
         this.msgList = []
         this.onlineNum = 0
@@ -177,7 +177,7 @@ export default {
       this.ws = new WebSocket('ws://localhost:8081')
     },
     sendMsg () {
-      if (!this.inputMsg.trim().length) return Toast('请输入发送内容')
+      if (!this.inputMsg.trim().length) return Toast('输入为空')
       this.isSending = true
     
       this.ws.send(JSON.stringify({
@@ -187,7 +187,7 @@ export default {
         roomName: this.currentRoomInfo.name,
         content: this.inputMsg.trim(),
       }))
-      // 本地默认显示
+    
       this.msgList.push({
         content: `${this.inputMsg}`,
         name: this.nickname,
@@ -209,7 +209,7 @@ export default {
       this.onlineNum = 0
       this.close()
       Toast({
-        content: '您已退出房间',
+        content: '退出房间',
         duration: 1000,
       })
     },
@@ -226,7 +226,7 @@ export default {
         Toast('请输入昵称')
       }
     },
-    msgChange() { // 监听消息列表变化以自动滚动到最新消息
+    msgChange() {
       if (this.scrollBottomTimeId) {
         clearTimeout(this.scrollBottomTimeId)
         this.scrollBottomTimeId = null
@@ -238,8 +238,8 @@ export default {
         }
         this.$nextTick(() => {
           const listHeight = this.msgListRef.offsetHeight
-          const diff = listHeight - this.wrapperHeight // 列表高度与容器高度差值
-          const top = this.msgRef.scrollTop // 列表滚动高度
+          const diff = listHeight - this.wrapperHeight 
+          const top = this.msgRef.scrollTop 
           if (diff - top > 10) {
             if (this.isBindScrolled) {
               this.isBindScrolled = false
