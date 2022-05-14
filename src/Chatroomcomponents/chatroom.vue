@@ -58,7 +58,7 @@
       </div>
       
       <div class="msgFooter">
-        <input class="msgInput" type="text" v-model="inputMsg" placeholder="输入内容" @keydown="sendInputKeydown" />
+        <input class="msgInput" type="text" v-model="inputMsg" placeholder="请输入发言内容" @keydown="sendInput" />
         <div class="btn" @click="sendMsg">SEND</div>
       </div>
     </div>
@@ -167,17 +167,17 @@ export default {
       }
 
       this.ws.onclose = () => {
-        Toast(”离开')
+        Toast('您已离开房间')
         this.roomOpen = false
         this.msgList = []
         this.onlineNum = 0
       }
     },
     connect () {
-      this.ws = new WebSocket('ws://localhost:8081')
+      this.ws = new WebSocket('ws://192.168.3.107:8081')
     },
     sendMsg () {
-      if (!this.inputMsg.trim().length) return Toast('输入为空')
+      if (!this.inputMsg.trim().length) return Toast('请输入发送内容')
       this.isSending = true
     
       this.ws.send(JSON.stringify({
@@ -187,7 +187,7 @@ export default {
         roomName: this.currentRoomInfo.name,
         content: this.inputMsg.trim(),
       }))
-    
+      // 本地默认显示
       this.msgList.push({
         content: `${this.inputMsg}`,
         name: this.nickname,
@@ -209,7 +209,7 @@ export default {
       this.onlineNum = 0
       this.close()
       Toast({
-        content: '退出房间',
+        content: '您已退出房间',
         duration: 1000,
       })
     },
@@ -226,7 +226,7 @@ export default {
         Toast('请输入昵称')
       }
     },
-    msgChange() {
+    msgChange() { // 监听消息列表变化以自动滚动到最新消息
       if (this.scrollBottomTimeId) {
         clearTimeout(this.scrollBottomTimeId)
         this.scrollBottomTimeId = null
@@ -279,7 +279,7 @@ export default {
         this.scrollIsBottom = false
       }
     },
-    sendInputKeydown(e) {
+    sendInput(e) {
       let key = e.keyCode;  
       if (key == 13) {
         this.sendMsg()
@@ -302,3 +302,4 @@ export default {
 <style scoped>
 @import './chatroom.scss';
 </style>
+
