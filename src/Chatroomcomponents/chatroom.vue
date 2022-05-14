@@ -174,7 +174,7 @@ export default {
       }
     },
     connect () {
-      this.ws = new WebSocket('ws://192.168.3.107:8081')
+      this.ws = new WebSocket('ws://47.107.111.88:8081')
     },
     sendMsg () {
       if (!this.inputMsg.trim().length) return Toast('请输入发送内容')
