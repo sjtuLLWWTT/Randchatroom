@@ -1,18 +1,14 @@
 export const roomList = [
   {
     roomId: 1,
-    name: '房间1',
+    name: '自由交流',
   },
   {
     roomId: 2,
-    name: '房间2',
+    name: '救援队求助',
   },
   {
     roomId: 3,
-    name: '房间3',
-  },
-  {
-    roomId: 4,
-    name: '房间4',
+    name: '社团咨询',
   },
 ]

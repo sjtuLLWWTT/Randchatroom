@@ -122,9 +122,13 @@ body {
 .userInfo {
   height: 120px;
   padding-top: 80px;
+  margin-left: 10%;
+  margin-right: 10%;
   box-sizing: border-box;
 }
 .nameInputBox {
+  position:relative;
+  height:50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,6 +136,7 @@ body {
 .nameInput {
   width: 20%;
   outline: none;
+  margin-top: 20px;
   border-width: 1px;
   border-color: #072239;
   border-radius: 2px;
@@ -141,6 +146,7 @@ body {
 }
 .nameConfirmBtn {
   width: 60px;
+  margin-top: 20px;
   margin-left: 16px;
   border-radius: 13px;
   padding: 0 12px;
@@ -184,17 +190,42 @@ body {
   font-weight: bold;
   text-align: center;
   margin: auto;
+  font-family:"楷体";
 }
+.titlename {
+  color: rgb(44, 16, 204);
+  font-weight: bold;
+  text-align: center;
+  margin:15px;
+  font-family:"楷体";
+}
+.introinfo{
+  color: rgb(44, 16, 204);
+  word-break : normal;
+  font-weight: bold;
+  margin: auto;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+  margin:15px;
+  font-family:"楷体";
+}
+.titlename:hover {
+  cursor: pointer;
+}
+
 .msgBox {
   font-size: 14px;
   flex: 1;
   overflow-y: scroll;
 }
 .msgPanel {
+  margin-bottom: 80px;
 }
 .msgItem {
   padding: 0 20px;
   margin-top: 20px;
+  
   position: relative;
   text-align: left;
   margin-left: 0px;
@@ -307,5 +338,26 @@ body {
     border-style: solid;
     border-color: transparent rgb(136, 129, 129) transparent transparent;
     border-image: initial;
+}
+
+ 
+input[type=checkbox] {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+ 
+label {
+	display: block;
+	padding: 5px;
+	border: 1px solid rgba(0,0,0,.1);
+	border-radius: 2px;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+}
+ 
+input[type=checkbox]:checked ~ .to-be-changed {
+	color: red;
+  display:block;
 }
 

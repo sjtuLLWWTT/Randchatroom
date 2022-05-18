@@ -21,7 +21,6 @@ wss.on('connection', function (ws) {
         group[ws.roomId]++
       }
     }
-
     data.num = group[ws.roomId]
     wss.clients.forEach(client => {
       if (client.readyState === Websocket.OPEN && client.roomId === ws.roomId) {
@@ -30,7 +29,7 @@ wss.on('connection', function (ws) {
     })
   })
 
-  ws.on('close', function (message) {
+  ws.on('close', function () {
     group[ws.roomId]--
 
     wss.clients.forEach(function each (client) {
